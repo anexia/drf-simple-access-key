@@ -1,0 +1,32 @@
+name: Module tests
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.6', '3.7', '3.8', '3.9', '3.10']
+        django-version: ['2.2', '3.1', '3.2']
+        drf-version: ['3.10', '3.11', '3.12']
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install module and requirements
+        run: pip install -r requirements.txt
+
+      - name: Install Django ${{ matrix.django-version }}
+        run: pip install django~=${{ matrix.django-version }}
+
+      - name: Install Django Rest Framework ${{ matrix.drf-version }}
+        run: pip install djangorestframework~=${{ matrix.drf-version }}
+
+      - name: Run tests
+        run: cd tests && python manage.py test
