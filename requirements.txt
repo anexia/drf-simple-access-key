@@ -1,0 +1,2 @@
+# Package and package dependencies
+-e .
