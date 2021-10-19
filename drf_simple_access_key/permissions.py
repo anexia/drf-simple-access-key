@@ -1,6 +1,11 @@
 from drf_simple_access_key.settings import simple_access_key_settings
 
 
+__all__ = [
+    'SimpleAccessKey'
+]
+
+
 class SimpleAccessKey(object):
     """
     Allow access if a valid authorisation token was part of the request headers. The authorization
