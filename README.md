@@ -1,5 +1,8 @@
 # DRF Simple Access Key
 
+[![PyPI](https://badge.fury.io/py/drf-simple-access-key.svg)](https://pypi.org/project/drf-simple-access-key/)
+[![Test Status](https://github.com/anexia-it/drf-simple-access-key/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/anexia-it/drf-simple-access-key/actions/workflows/test.yml)
+[![Codecov](https://codecov.io/gh/anexia-it/drf-simple-access-key/branch/main/graph/badge.svg)](https://codecov.io/gh/anexia-it/drf-simple-access-key)
 
 A library that allows to implement a simple token authorization for Django REST Framework.
 

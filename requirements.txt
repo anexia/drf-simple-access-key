@@ -1,2 +1,9 @@
 # Package and package dependencies
 -e .
+
+# Development dependencies
+flake8>=3.9,<3.10
+codecov>=2.1,<2.2
+setuptools>=42
+wheel>=0.37
+twine>=3.4
