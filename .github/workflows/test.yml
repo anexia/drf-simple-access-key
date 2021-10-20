@@ -18,6 +18,15 @@ jobs:
           - '2.2'
           - '3.1'
           - '3.2'
+        djangorestframework-version:
+          - '3.10'
+          - '3.11'
+          - '3.12'
+        exclude:
+          - django-version: '3.1'
+            djangorestframework-version: '3.10'
+          - django-version: '3.2'
+            djangorestframework-version: '3.10'
 
     steps:
       - uses: actions/checkout@v2
@@ -32,6 +41,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install django~=${{ matrix.django-version }}.0
+          pip install djangorestframework~=${{ matrix.djangorestframework-version }}.0
 
       - name: Lint with flake8
         run: |

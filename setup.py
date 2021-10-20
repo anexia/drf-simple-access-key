@@ -1,61 +1,30 @@
-import io
 import os
 
 from setuptools import find_packages, setup
 
-# Package meta-data.
-NAME = 'drf-simple-access-key'
-DESCRIPTION = 'A library that allows to implement a simple token authorization for Django REST Framework.'
-URL = 'https://github.com/anexia-it/drf-simple-access-key'
-EMAIL = 'HNezbeda@anexia-it.com'
-AUTHOR = 'Harald Nezbeda'
-REQUIRES_PYTHON = '>=3.6.0'
+with open(os.path.join(os.path.dirname(__file__), 'README.md')) as fh:
+    readme = fh.read()
 
-# What packages are required for this module to be executed?
-REQUIRED = [
-    'django>=2.2',
-    'djangorestframework>=3.10',
-]
+# allow setup.py to be run from any path
+os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
-# What packages are optional?
-EXTRAS = {
-}
-
-# The rest you shouldn't have to touch too much :)
-# ------------------------------------------------
-# Except, perhaps the License and Trove Classifiers!
-# If you do change the License, remember to change the Trove Classifier for that!
-
-here = os.path.abspath(os.path.dirname(__file__))
-
-# Import the README and use it as the long-description.
-# Note: this will only work if 'README.md' is present in your MANIFEST.in file!
-try:
-    with io.open(os.path.join(here, 'README.md'), encoding='utf-8') as f:
-        long_description = '\n' + f.read()
-except FileNotFoundError:
-    long_description = DESCRIPTION
-
-
-# Where the magic happens:
 setup(
-    name=NAME,
+    name='drf-simple-access-key',
     version=os.getenv('PACKAGE_VERSION', '0.0.0').replace('refs/tags/', ''),
-    description=DESCRIPTION,
-    long_description=long_description,
-    long_description_content_type='text/markdown',
-    author=AUTHOR,
-    author_email=EMAIL,
-    python_requires=REQUIRES_PYTHON,
-    url=URL,
-    packages=find_packages(exclude=["tests", "*.tests", "*.tests.*", "tests.*"]),
-    install_requires=REQUIRED,
-    extras_require=EXTRAS,
+    packages=find_packages(),
     include_package_data=True,
     license='MIT',
+    description='A library that provides a simple token authorization for Django REST framework.',
+    long_description=readme,
+    long_description_content_type='text/markdown',
+    url='https://github.com/anexia-it/drf-simple-access-key',
+    author='Harald Nezbeda',
+    author_email='HNezbeda@anexia-it.com',
+    install_requires=[
+        'django>=2.2',
+        'djangorestframework>=3.10',
+    ],
     classifiers=[
-        # Trove classifiers
-        # Full list: https://pypi.python.org/pypi?%3Aaction=list_classifiers
         'License :: OSI Approved :: MIT License',
         'Framework :: Django',
         'Framework :: Django :: 2.2',
