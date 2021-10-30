@@ -72,6 +72,16 @@ GET http://my.tld/api/v1/resource/
 x-authorization: bearer example-token-1234
 ```
 
+### When to use
+
+This library provides the simplest possible solution to protect a REST API from unauthorized access. It allows anyone in possession of a valid key to access the endpoints without the possibility of user authentication. This type of authorization is well suited for microservices that users cannot access directly.
+
+**In summary this means:**  
+✔️ Use this authorization only if access to the REST API is possible from known and trusted sources only (e.g. an API gateway).  
+✔️ Use this authorization only if no user authentication is required within the REST API.  
+❌ Never use this authorization if the REST API is publicly accessible over the Internet.  
+❌ Never use this authorization if the consumers of the REST API are real users, and not exclusively systems such as an API gateway.  
+
 ## Supported versions
 
 |             | Django REST framework 3.10 | Django REST framework 3.11 | Django REST framework 3.12 |
