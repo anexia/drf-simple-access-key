@@ -8,5 +8,9 @@ setuptools>=42
 wheel>=0.37
 twine>=3.4
 
+# Linters and formatters
+isort>=5.10,<5.11
+black>=22.6.0,<22.7
+
 # fix importlib version to avoid "AttributeError: 'EntryPoints' object has no attribute 'get'" with flake8
 importlib-metadata<5.0
