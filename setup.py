@@ -17,7 +17,7 @@ setup(
     description='A library that provides a simple token authorization for Django REST framework.',
     long_description=readme,
     long_description_content_type='text/markdown',
-    url='https://github.com/anexia-it/drf-simple-access-key',
+    url='https://github.com/anexia/drf-simple-access-key',
     author='Harald Nezbeda',
     author_email='HNezbeda@anexia-it.com',
     install_requires=[

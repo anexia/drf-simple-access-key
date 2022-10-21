@@ -1,8 +1,8 @@
 # DRF Simple Access Key
 
 [![PyPI](https://badge.fury.io/py/drf-simple-access-key.svg)](https://pypi.org/project/drf-simple-access-key/)
-[![Test Status](https://github.com/anexia-it/drf-simple-access-key/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/anexia-it/drf-simple-access-key/actions/workflows/test.yml)
-[![Codecov](https://codecov.io/gh/anexia-it/drf-simple-access-key/branch/main/graph/badge.svg)](https://codecov.io/gh/anexia-it/drf-simple-access-key)
+[![Test Status](https://github.com/anexia/drf-simple-access-key/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/anexia/drf-simple-access-key/actions/workflows/test.yml)
+[![Codecov](https://codecov.io/gh/anexia/drf-simple-access-key/branch/main/graph/badge.svg)](https://codecov.io/gh/anexia/drf-simple-access-key)
 
 A library that provides a simple token authorization for Django REST framework.
 
@@ -92,6 +92,26 @@ This library provides the simplest possible solution to protect a REST API from 
 | Python 3.9  | ✓                          | ✓                          | ✓                          |
 | Python 3.10 | ✓                          | ✓                          | ✓                          |
 | PyPy3       | ✓                          | ✓                          | ✓                          |
+
+## Tests
+
+See folder [tests/](tests/). Basically, all endpoints are covered with multiple
+unit tests.
+
+Follow below instructions to run the tests.
+You may exchange the installed Django and DRF versions according to your requirements. 
+:warning: Depending on your local environment settings you might need to explicitly call `python3` instead of `python`.
+```bash
+# install dependencies
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+
+# setup environment
+pip install -e .
+
+# run tests
+cd tests && python manage.py test
+```
 
 ## List of developers
 
