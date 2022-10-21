@@ -7,3 +7,6 @@ codecov>=2.1,<2.2
 setuptools>=42
 wheel>=0.37
 twine>=3.4
+
+# fix importlib version to avoid "AttributeError: 'EntryPoints' object has no attribute 'get'" with flake8
+importlib-metadata<5.0
