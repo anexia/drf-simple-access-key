@@ -1,9 +1,6 @@
 from drf_simple_access_key.settings import simple_access_key_settings
 
-
-__all__ = [
-    'SimpleAccessKey'
-]
+__all__ = ["SimpleAccessKey"]
 
 
 class SimpleAccessKey(object):
@@ -20,9 +17,7 @@ class SimpleAccessKey(object):
         """
         settings = simple_access_key_settings()
         allowed_keys = settings.AUTHORIZATION_KEYS
-        request_key = request.headers.get(
-            settings.HTTP_AUTHORIZATION_HEADER
-        )
+        request_key = request.headers.get(settings.HTTP_AUTHORIZATION_HEADER)
 
         if not allowed_keys:
             return True
@@ -31,8 +26,13 @@ class SimpleAccessKey(object):
             key_schema, key = request_key.split(" ", maxsplit=1)
             key_schema, key = key_schema.strip().lower(), key.strip()
 
-            return key_schema == settings.HTTP_AUTHORIZATION_SCHEME and key in allowed_keys
-        except (AttributeError, ValueError,):
+            return (
+                key_schema == settings.HTTP_AUTHORIZATION_SCHEME and key in allowed_keys
+            )
+        except (
+            AttributeError,
+            ValueError,
+        ):
             return False
 
     def has_object_permission(self, request, view, obj):
