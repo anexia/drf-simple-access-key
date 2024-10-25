@@ -95,14 +95,13 @@ This library provides the simplest possible solution to protect a REST API from 
 
 ## Supported versions
 
-|             | Django REST framework 3.10 | Django REST framework 3.11 | Django REST framework 3.12 |
-|-------------|----------------------------|----------------------------|----------------------------|
-| Python 3.6  | ✓                          | ✓                          | ✓                          |
-| Python 3.7  | ✓                          | ✓                          | ✓                          |
-| Python 3.8  | ✓                          | ✓                          | ✓                          |
-| Python 3.9  | ✓                          | ✓                          | ✓                          |
-| Python 3.10 | ✓                          | ✓                          | ✓                          |
-| PyPy3       | ✓                          | ✓                          | ✓                          |
+|             | Django REST framework 3.14 | Django REST framework 3.15 |
+|-------------|----------------------------|----------------------------|
+| Python 3.9  | ✓                          | ✓                          |
+| Python 3.10 | ✓                          | ✓                          |
+| Python 3.11 | ✓                          | ✓                          |
+| Python 3.12 | ✓                          | ✓                          |
+| Python 3.13 | ✓                          | ✓                          |
 
 ## Tests
 
